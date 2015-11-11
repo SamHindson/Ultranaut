@@ -1,0 +1,171 @@
+@0@
+>Welcome to the ULTRANAUT Technical Preview!
+>This tutorial will help you get used to ULTRANAUT.
+>Click "OK" to dismiss and carry on with the Tutorial.
+>Click "HIDE" to hide current and future tips.
+
+@1@
+>This is you. You are an ULTRANAUT.
+>Use D and A to walk side to side.
+>Use SPACE to jump.
+
+@2@
+>You packed a map. Whew!
+>Press 'X' to bring your Map up.
+
+@3@
+>Great. That little cyan dot is you!
+>You are currently on a planet.
+>Use PAGE UP and PAGE DOWN to zoom in and out.
+
+@4@
+>There is a greenish dot on the planet, just
+>over your horizon. Go and check it out!
+
+@5@
+>This is the Odyssey Lander you probably 
+>used to get here.
+>Get close to it and press 'U' to get in.
+
+@6@
+>Sweet ride. Notice your various meters.
+>FUEL is what it sounds like - it allows you
+>to fire your engines and travel the cosmos.
+>MONO is monopropellant - it's like the ship's
+>jet pack. The big engines can't fire in all 4 
+>directions, and the monopropellant comes into
+>play when docking and fine tuning movements.
+>
+>Press 'W' to fire your engines and 'A' and 'D'
+>to change your ship's rotation.
+
+@7@
+>There was something else on the map, too...
+>Press 'X' to open it again. Zoom out and
+>hover your mouse over the little red marker.
+
+@8@
+>Aha! 
+>It's your interplanetary drive 
+>that's orbiting the planet! 
+>That's how you got here. Let's dock with it!
+
+@9@
+>But first, some basic orbital mechanics.
+>Orbiting is essentially going too fast sideways to hit a
+>planet's surface. You get pulled towards it, but you
+>don't hit it if you're going too fast to!
+>Make sure your Odyssey is facing upwards, fire your
+>engines for 3 seconds by pressing 'W'.
+>While firing, tap the 'D' key to begin what's called a 
+>'Gravity Turn'.
+
+@10@
+>Nice. Stop firing and open your map.
+
+@11@
+>Now, it says that you're on a suborbital trajectory 
+>(i.e., you're not quite in an orbital one yet.)
+>Your current path is the green one.
+>That "A" stands for Apogee - the highest point in your 
+>trajectory.
+>In the bottom right corner, there is a little gray box. 
+>Click it.
+
+@12@
+>This is your Navigational Ball. 
+>It shows where you're going.
+>When the blue arrow (your ship) is facing the Plus, 
+>you are facing in the direction you are currently heading in. 
+>This is called the Prograde Direction.
+>Similarly, the Minus represents Retrograde, the exact opposite
+>to your direction of motion.
+>Turn to face Prograde (the Plus on the NavBall) and fire your engines
+>until your trajectory does not touch the planet at all.
+
+@13@
+>Hooray! You are in orbit!
+>Pretty simple, huh?
+>When you face the Prograde marker and burn, the height of your
+>orbit increases everywhere apart from where you burn.
+>Similarly, when you face the Retrograde marker and burn, 
+>the height of your orbit decreases everywhere apart 
+>from where you burn.
+
+@14@
+>Why not practice orbiting and deorbiting a few times, and 
+>press F2 when you're ready to begin docking.
+>Make sure to click the Interplanetary Drive in the Map View
+>to set it as your target!
+
+@15@
+>Cue the Interstellar Music. We're attempting docking!
+>Go back to the planet's surface. We'll wait until out
+>target passes above us in the sky before we start moving,
+>otherwise things get *really* complicated.
+
+@16@
+>When the ship is just about to pass over your position, 
+>burn upwards and towards the target (this direction is
+>visible as the pink dot on the pink ball on your 
+targeting computer. When the blue arrow faces the dot, 
+you're heading towards the target.)
+>When you're pretty close, turn to face your 
+>Target Retrograde, indicated by the yellow dot
+>on the same pink circle.
+
+@17@
+>We'll get back to you when your distance is less than
+>100m and your relative velocity is less than 10m/s.
+>Remember, you have multidirectional RCS! No need
+>for big engine burns!
+
+@18@
+>Awesome! Final approach!
+>Point towards your ship and fire your RCS so you
+>start travelling towards it. When you're EXTREMELY
+>close (like 20m), we'll come back and help you.
+
+@19@
+>Alright.
+>At the bottom of the Interplanetary Ship there
+>is a docking port. Get the top of your
+>ship to go in that port and you'll be docked.
+>Good luck!
+
+@20@
+>Success!
+>You did what only the most experienced spacecraft 
+>pilots could do! 
+>Now you may travel to other planets if you wish.
+
+@21@
+>However, when you get there, don't try land
+>the Interplanetary Drive!! It doesn't have legs!!!
+>
+>When you need to, hold 'F1' to undock the lander.
+>You may refuel the lander on other planets
+>if they have sufficient Hydrocarbon contents in
+>their surface. You have to land first!
+
+@22@
+>The Interplanetary Drive doesn't need refueling,
+>it uses electric propulsion. 
+>
+>Solar panels, baby!
+
+@23@
+>That is all from Ultranaut v0.0.1!
+>Features to look out for in the future:
+>
+>*Vastly improved graphics!
+>*Space stations! (cooool!)
+>*Music and noises!
+>*A story!
+>*Perhaps even multiplayer!
+>*Resource Mining!
+>*Space Craft Synthesis!
+>*Death!
+
+@24@
+>Enjoy!
