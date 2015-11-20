@@ -11,6 +11,8 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.semdog.ultranaut.UltranautGame;
 
+import box2dLight.RayHandler;
+
 /**
  * This is the Object Test State.
  * Unaccessible by the user, it proves helpful when testing newly
@@ -33,6 +35,9 @@ public class ObjectTestState extends ScreenAdapter {
 	private OrthographicCamera camera;
 	private Box2DDebugRenderer renderer;
 	private ShapeRenderer shapeRenderer;
+
+	private float xx = -100, yy = 50;
+	
 	public ObjectTestState(UltranautGame game) {
 		this.game = game;
 
@@ -42,8 +47,6 @@ public class ObjectTestState extends ScreenAdapter {
 		camera.zoom = 4;
 		renderer = new Box2DDebugRenderer();
 
-		shapeRenderer = new ShapeRenderer();
-		
 		shapeRenderer = new ShapeRenderer();
 	}
 
@@ -59,13 +62,16 @@ public class ObjectTestState extends ScreenAdapter {
 		super.render(delta);
 
 		update(delta);
+		
+		xx += delta * 10;
 
 		Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT | (Gdx.graphics.getBufferFormat().coverageSampling ? GL20.GL_COVERAGE_BUFFER_BIT_NV : 0));
 		Gdx.gl20.glClearColor(0.2f, 0.0f, 0.0f, 1.0f);
-
-		renderer.render(physicsWorld, camera.combined);
 		
-		shapeRenderer.begin(ShapeType.Filled);
+		renderer.render(physicsWorld, camera.combined);
+				
+		shapeRenderer.begin(ShapeType.Line);
+		shapeRenderer.curve(xx, 50, 0, 0, 0, 0, 100, 50, 10);
 		shapeRenderer.end();
 	}
 

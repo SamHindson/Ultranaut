@@ -50,6 +50,7 @@ public abstract class Ship extends Mass implements Entity {
 
 	@Override
 	public void recalculateOrbit() {
+		orbitalEccentricity = OrbitalHelper.computeOrbit(environment.getPosition(), body.getPosition(), body.getLinearVelocity(), environment.getMass())[1];
 		apoapsis = OrbitalHelper.computeOrbit(environment.getPosition(), new Vector2(x, y), new Vector2(vx, vy), environment.getMass())[5] - environment.getAverageRadius();
 		periapsis = OrbitalHelper.computeOrbit(environment.getPosition(), new Vector2(x, y), new Vector2(vx, vy), environment.getMass())[6] - environment.getAverageRadius();
 		semimajorAxis = OrbitalHelper.computeOrbit(environment.getPosition(), new Vector2(x, y), new Vector2(vx, vy), environment.getMass())[3];

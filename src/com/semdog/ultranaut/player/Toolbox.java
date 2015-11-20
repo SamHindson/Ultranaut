@@ -12,7 +12,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.semdog.ultranaut.UltranautGame;
-import com.semdog.ultranaut.states.TutorialManager;
 
 /**
  * This is a class whose object is seen ingame by the little
@@ -75,9 +74,6 @@ public class Toolbox {
 				movingIn = false;
 				deployed = true;
 				y = 250;
-				
-				if(content instanceof Navball)
-					TutorialManager.showTip(12);
 			}
 		} else if(movingOut) {
 			deployedPercent += (-5-deployedPercent) / 2.f;

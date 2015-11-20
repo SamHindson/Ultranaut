@@ -11,8 +11,8 @@ import com.semdog.ultranaut.states.SettingsState;
 
 public class UltranautGame extends Game {
 
-	public static int WIDTH = 1280;
-	public static int HEIGHT = 720;
+	public static int WIDTH = 1024;
+	public static int HEIGHT = (WIDTH * 9 / 16);
 
 	public static final int MENUSTATE = 0, PLAYSTATE = 1, SETTINGSSTATE = 2, ABOUTSTATE = 3;
 
@@ -20,9 +20,20 @@ public class UltranautGame extends Game {
 
 	public static boolean debug = true;
 	public static boolean loading = true;
-
+	
+	private boolean testing;
+	
+	public UltranautGame(String what) {
+		System.out.println(what);
+		testing = what.equals("testing");
+	}
+	
 	public void create() {
-		screen = new ObjectTestState(this);
+		if(testing)
+			screen = new ObjectTestState(this);
+		else
+			screen = new PlayState(this);
+		
 		setScreen(screen);
 	}
 	

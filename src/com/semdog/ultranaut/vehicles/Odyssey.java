@@ -17,7 +17,6 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.semdog.ultranaut.meta.UltranautColors;
 import com.semdog.ultranaut.player.Player;
-import com.semdog.ultranaut.states.TutorialManager;
 import com.semdog.ultranaut.universe.CelestialBody;
 import com.semdog.ultranaut.universe.Environment;
 import com.semdog.ultranaut.universe.Star;
@@ -38,6 +37,8 @@ public class Odyssey extends Ship {
 	private float fuelPercent = 100.f, monoPercent = 100.f;
 	
 	private DockingPort dockingPort;
+	
+	private float lightIntensity = 0;
 	
 	public Odyssey(Environment env, World sim, Vector2 position) {
 		super(env, sim, position);
@@ -214,9 +215,15 @@ public class Odyssey extends Ship {
 				recalculateOrbit();
 				leftFlame.getEmitters().first().setContinuous(true);
 				rightFlame.getEmitters().first().setContinuous(true);
+				
+				if(lightIntensity < 0.5)
+					lightIntensity += 5.5f * dt;
 			} else {
 				leftFlame.getEmitters().first().setContinuous(false);
 				rightFlame.getEmitters().first().setContinuous(false);
+				
+				if(lightIntensity > 0) 
+					lightIntensity -= 5.5f * dt;
 			}
 
 			//	Here, A is pressed to rotate the ship counter-clockwise.
@@ -335,7 +342,6 @@ public class Odyssey extends Ship {
 	@Override
 	public void setDriver(Player player) {
 		super.setDriver(player);
-		TutorialManager.showTip(6);
 	}
 
 	/**

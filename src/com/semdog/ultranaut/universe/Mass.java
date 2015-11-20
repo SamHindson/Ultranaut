@@ -25,6 +25,7 @@ public abstract class Mass implements Focusable {
 	protected float semimajorAxis, semiminorAxis;
 	protected float orbitAngle;
 	protected float orbitalPeriod;
+	protected float orbitalEccentricity;
 	protected Environment environment;
 
 	/**
@@ -73,6 +74,7 @@ public abstract class Mass implements Focusable {
 	 * In subsequent versions with many masses, this method will be utilized properly.
 	 */
 	public void recalculateOrbit() {
+		orbitalEccentricity = OrbitalHelper.computeOrbit(environment.getPosition(), body.getPosition(), body.getLinearVelocity(), environment.getMass())[1];
 		apoapsis = OrbitalHelper.computeOrbit(environment.getPosition(), body.getPosition(), body.getLinearVelocity(), environment.getMass())[5] - environment.getAverageRadius();
 		periapsis = OrbitalHelper.computeOrbit(environment.getPosition(), body.getPosition(), body.getLinearVelocity(), environment.getMass())[6] - environment.getAverageRadius();
 		semimajorAxis = OrbitalHelper.computeOrbit(environment.getPosition(), body.getPosition(), body.getLinearVelocity(), environment.getMass())[3];
@@ -99,6 +101,10 @@ public abstract class Mass implements Focusable {
 	
 	public float getOrbitalPeriod() {
 		return orbitalPeriod;
+	}
+	
+	public float getOrbitalEccentricity() {
+		return orbitalEccentricity;
 	}
 
 	public float getTrueAnomaly() {

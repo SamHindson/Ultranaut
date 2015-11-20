@@ -6,7 +6,6 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.semdog.ultranaut.player.Foot;
 import com.semdog.ultranaut.player.Player;
-import com.semdog.ultranaut.states.TutorialManager;
 import com.semdog.ultranaut.vehicles.DockingPort;
 import com.semdog.ultranaut.vehicles.PlayerSensor;
 import com.semdog.ultranaut.vehicles.Ship;
@@ -41,7 +40,6 @@ public class UniverseContactListener implements ContactListener {
 		
 		if(b instanceof Ship && a instanceof CelestialBody) {
 			((Ship)b).setOnSurface(true);
-			TutorialManager.showTip(16);
 		}
 		
 		if(a instanceof Mass)
@@ -56,7 +54,6 @@ public class UniverseContactListener implements ContactListener {
 		if (b instanceof Player) {
 			if (a instanceof CelestialBody || a instanceof Ship) {
 				((Player) b).setOnSurface(true);
-				TutorialManager.showTip(0);
 			}
 			else if (a instanceof PlayerSensor)
 				((Player) b).setNearbyShip(((PlayerSensor) a).getShip(), true);

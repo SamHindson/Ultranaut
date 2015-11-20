@@ -35,7 +35,10 @@ public class Loader {
 		configuration.title = "Utranaut";
 		configuration.resizable = false;
 		configuration.samples = 4;
+		
+		configuration.vSyncEnabled = false;
+		configuration.foregroundFPS = 120;
 
-		game = new LwjglApplication(new UltranautGame(), configuration);
+		game = new LwjglApplication(new UltranautGame(args[0]), configuration);
 	}
 }

@@ -49,7 +49,7 @@ public class Star implements Environment, Focusable {
 
 		mass = (MathUtils.PI * radius * radius * radius) * 10;
 
-		bodies = new CelestialBody[10];
+		bodies = new CelestialBody[3];
 
 		color = new Color(1.0f, 1.0f, 0.5f, 1.0f);
 

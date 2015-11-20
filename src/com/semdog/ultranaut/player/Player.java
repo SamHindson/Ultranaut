@@ -24,14 +24,12 @@ import com.semdog.ultranaut.mathematics.FlightComputer;
 import com.semdog.ultranaut.mathematics.Focusable;
 import com.semdog.ultranaut.mathematics.OrbitalHelper;
 import com.semdog.ultranaut.meta.UltranautColors;
-import com.semdog.ultranaut.states.TutorialManager;
 import com.semdog.ultranaut.universe.CelestialBody;
 import com.semdog.ultranaut.universe.Environment;
 import com.semdog.ultranaut.universe.Mass;
 import com.semdog.ultranaut.universe.Planet;
 import com.semdog.ultranaut.universe.Star;
 import com.semdog.ultranaut.universe.Universe;
-import com.semdog.ultranaut.vehicles.Odyssey;
 import com.semdog.ultranaut.vehicles.Ship;
 import com.semdog.ultranaut.vehicles.Triumph;
 
@@ -188,7 +186,6 @@ public class Player extends Mass {
 			if (Gdx.input.isKeyPressed(Keys.SPACE)) {
 				if (onSurface) {
 					body.applyForceToCenter(-10000 * MathUtils.sin(angle), 10000 * MathUtils.cos(angle), true);
-					TutorialManager.showTip(2);
 				}
 			}
 
@@ -213,25 +210,6 @@ public class Player extends Mass {
 		navballToolbox.update(dt);
 		navball.updateContent(this);
 		navball.update(dt);
-		
-		if(getApoapsis() > 200)
-			TutorialManager.showTip(10);
-		
-		if(getPeriapsis() > 20)
-			TutorialManager.showTip(13);
-		
-		if(Gdx.input.isKeyJustPressed(Keys.F2))
-			TutorialManager.showTip(15);
-		
-		if(target != null) {
-			if(target.getVelocity().sub(getVelocity()).len() < 10 && target.getPosition().sub(getPosition()).len() < 100) {
-				TutorialManager.showTip(18);
-			}
-			
-			if(target.getPosition().sub(getPosition()).len() < 30) {
-				TutorialManager.showTip(19);
-			}
-		}
 		
 		if (notifying)
 			notifyTime += dt;

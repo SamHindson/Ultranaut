@@ -155,7 +155,7 @@ public abstract class CelestialBody implements Environment, Focusable {
 	}
 	
 	public float getInfluenceSphereRadius() {
-		return influenceSphereRadius;
+		return getOrbitRadius() * (float)Math.pow(mass / parent.getMass(), 1./5.);
 	}
 
 	public abstract float getMass();

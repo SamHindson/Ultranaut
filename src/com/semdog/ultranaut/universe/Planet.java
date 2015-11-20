@@ -43,7 +43,7 @@ public class Planet extends CelestialBody implements Environment {
 
 		//	Each planet has a radius of between 250 and 1000m
 		radius = MathUtils.random(1000, 5000);
-		radius = 5000;
+		radius = 2500;
 		
 		//	The mass of the planet is pi*r^3
 		mass = MathUtils.PI * radius * radius * radius * 0.1f;
@@ -62,7 +62,7 @@ public class Planet extends CelestialBody implements Environment {
 		 * m is the mass of the smaller body
 		 * M is the mass of the larger body.
 		 */
-		influenceSphereRadius = distance * (float)Math.pow(mass / parent.getMass(), 2./5.);
+		influenceSphereRadius = distance * (float)Math.pow(mass / parent.getMass(), 1./5.);
 
 		this.orbitRadius = distance;
 		this.orbitalAngle = trueOrbitalAngle = angle;

@@ -1,7 +1,10 @@
 package com.semdog.ultranaut.universe;
 
+import java.awt.peer.LightweightPeer;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,15 +13,19 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Joint;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.semdog.ultranaut.UltranautGame;
 import com.semdog.ultranaut.mathematics.FlightComputer;
+import com.semdog.ultranaut.meta.UltranautColors;
 import com.semdog.ultranaut.player.Player;
-import com.semdog.ultranaut.states.TutorialManager;
 import com.semdog.ultranaut.vehicles.Odyssey;
 import com.semdog.ultranaut.vehicles.Triumph;
+
+import box2dLight.DirectionalLight;
+import box2dLight.RayHandler;
 
 /**
  * This class is what it sounds like --- it holds everything visible
@@ -50,6 +57,8 @@ public class Universe {
 	private static float age = 0;
 
 	private static Player player;
+	
+	@SuppressWarnings("unused")
 	private Odyssey testShip;
 	
 	@SuppressWarnings("unused")
@@ -121,7 +130,7 @@ public class Universe {
 		
 		//	If the Flight Computer isn't up, then draw everything else.
 		if (!flightComputerUp) {
-
+			
 			//	The planetBatch is a PolygonSprite batch, which allows for non-rectangular sprites to be drawn.
 			planetBatch.begin();
 			testStar.draw(planetBatch);
@@ -137,7 +146,7 @@ public class Universe {
 			environmentBatch.end();
 
 			//	The physics world is drawn, so all colliders are visible. Comment this out for an immersive experience.
-			//renderer.render(physicsWorld, camera.combined);
+			renderer.render(physicsWorld, camera.combined);
 		}
 
 		//	The hudBatch draws all UI which should be superimposed on whatever is being drawn in the background.
@@ -167,7 +176,7 @@ public class Universe {
 		player.update(dt);
 		
 		//	This method tells the physics world to update.
-		physicsWorld.step(1 / 60.f, 6, 2);
+		physicsWorld.step(1 / 120.f, 6, 2);
 		
 		testStar.update(dt);
 
@@ -179,8 +188,6 @@ public class Universe {
 		//	Checks if the flight computer needs to be displayed
 		if (Gdx.input.isKeyJustPressed(Keys.X)) {
 			flightComputerUp = !flightComputerUp;
-			TutorialManager.showTip(3);
-			TutorialManager.showTip(11);
 		}
 
 		//	If the computer isn't up, this will update the camera.
@@ -224,10 +231,6 @@ public class Universe {
 			environmentBatch.setProjectionMatrix(camera.combined);
 		} else {
 			flightComputer.update(dt);
-		}
-		
-		if(player.getPosition().sub(testShip.getPosition()).len() < 100) {
-			TutorialManager.showTip(5);
 		}
 		
 		/*

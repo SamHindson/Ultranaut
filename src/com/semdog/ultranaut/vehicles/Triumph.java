@@ -16,7 +16,6 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.semdog.ultranaut.meta.UltranautColors;
-import com.semdog.ultranaut.states.TutorialManager;
 import com.semdog.ultranaut.universe.Environment;
 import com.semdog.ultranaut.universe.Universe;
 
@@ -230,7 +229,6 @@ public class Triumph extends Ship {
 	@Override
 	public void dockedWithShip(Ship docked) {
 		dockedShip = docked;
-		TutorialManager.showTip(20);
 
 		if (docked instanceof Odyssey) {
 			dockedSprite = new Sprite(new Texture(Gdx.files.internal("assets/graphics/ships/odyssey.png")));
@@ -241,7 +239,7 @@ public class Triumph extends Ship {
 
 	@Override
 	public void undockedWithShip(Ship undocked) {
-
+		
 	}
 
 	public void releaseDocked() {
