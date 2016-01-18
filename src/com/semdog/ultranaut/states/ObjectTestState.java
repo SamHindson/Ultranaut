@@ -11,8 +11,6 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.semdog.ultranaut.UltranautGame;
 
-import box2dLight.RayHandler;
-
 /**
  * This is the Object Test State.
  * Unaccessible by the user, it proves helpful when testing newly
@@ -23,6 +21,8 @@ import box2dLight.RayHandler;
  * 
  * It contains simple things such as a physics simulation
  * world, a shape renderer and a camera.
+ * 
+ * Look at me, I'm committing from a USB!
  * 
  * @author Sam
  */
@@ -36,7 +36,7 @@ public class ObjectTestState extends ScreenAdapter {
 	private Box2DDebugRenderer renderer;
 	private ShapeRenderer shapeRenderer;
 
-	private float xx = -100, yy = 50;
+	private float xx = -100;
 	
 	public ObjectTestState(UltranautGame game) {
 		this.game = game;

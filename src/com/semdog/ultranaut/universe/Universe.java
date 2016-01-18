@@ -1,10 +1,7 @@
 package com.semdog.ultranaut.universe;
 
-import java.awt.peer.LightweightPeer;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,19 +10,14 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Joint;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.semdog.ultranaut.UltranautGame;
 import com.semdog.ultranaut.mathematics.FlightComputer;
-import com.semdog.ultranaut.meta.UltranautColors;
 import com.semdog.ultranaut.player.Player;
 import com.semdog.ultranaut.vehicles.Odyssey;
 import com.semdog.ultranaut.vehicles.Triumph;
-
-import box2dLight.DirectionalLight;
-import box2dLight.RayHandler;
 
 /**
  * This class is what it sounds like --- it holds everything visible
